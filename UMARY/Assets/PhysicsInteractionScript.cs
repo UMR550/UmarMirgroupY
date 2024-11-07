@@ -5,11 +5,16 @@ using UnityEngine;
 public class PhysicsInteractionScript : MonoBehaviour
 {
     Rigidbody rb;
+    float explosionRadius = 10;
+    float explosionStrength = 1000;
+
     // Start is called before the first frame update
     void Start()
 
     {
         rb = GetComponent<Rigidbody>();
+        rb.AddForce(100 * transform.forward, ForceMode.Impulse);
+
         
     }
 
